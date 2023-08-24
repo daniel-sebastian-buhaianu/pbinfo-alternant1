@@ -2,26 +2,32 @@
 
 int main()
 {
-    char c, cifra_anterioara;
+    char x, y;
     unsigned short nrcif = 0;
 
-    scanf("%c", &c);
+    scanf("%c", &x);
 
-    while (c >= '0' && c <= '9') {
+    if (x >= '0' && x <= '9') {
+        nrcif++;
+    }
+
+    scanf("%c", &y);
+
+    while (y >= '0' && y <= '9') {
         nrcif++;
 
-        if (cifra_anterioara % 2 == c % 2) {
+        if (x % 2 == y % 2) {
             printf("nu");
             return 0;
         }
 
-        cifra_anterioara = c;
+        x = y;
 
-        scanf("%c", &c);
+        scanf("%c", &y);
     }
     
     nrcif > 0 ? printf("da") : printf("nu");
 
     return 0;
 }
-// 70/100
+// 80/100
