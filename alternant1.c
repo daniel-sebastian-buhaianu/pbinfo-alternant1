@@ -2,19 +2,15 @@
 
 int main()
 {
+    unsigned long long n;
     char x, y;
-    unsigned short nrcif = 0;
 
-    scanf("%c", &x);
+    scanf("%llu", &n);
 
-    if (x >= '0' && x <= '9') {
-        nrcif++;
-    }
-
-    scanf("%c", &y);
-
-    while (y >= '0' && y <= '9') {
-        nrcif++;
+    x = n % 10;
+    n = n / 10;
+    while (n) {
+        y = n % 10;
 
         if (x % 2 == y % 2) {
             printf("nu");
@@ -23,11 +19,11 @@ int main()
 
         x = y;
 
-        scanf("%c", &y);
+        n = n / 10;
     }
-    
-    nrcif > 0 ? printf("da") : printf("nu");
+
+    printf("da");
 
     return 0;
 }
-// 80/100
+// 100/100
